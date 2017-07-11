@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<body>
+var http = require('http');
 
-<div ng-app="">
-  <p>Name: <input type="text" ng-model="name"></p>
-  <p ng-bind="name"></p>
-</div>
-
-</body>
-</html>
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World!');
+}).listen(8080);
